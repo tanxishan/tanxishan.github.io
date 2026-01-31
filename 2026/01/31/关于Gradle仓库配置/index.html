@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            关于Gradle仓库配置 | Frank&#39;s Blog
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Frank&#39;s Blog</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">仅仅记录自己的学习笔记，见证自己的学习轨迹！</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Tags</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Archives</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">About</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">Frank</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Steam</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Weibo</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/">关于Gradle仓库配置</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2026-01-31
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2026-01-31
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/Gradle/">Gradle</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        Views:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=关于Gradle仓库配置&url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/&pic=https://frankclr.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=关于Gradle仓库配置&url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/&via=Frank" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/&title=关于Gradle仓库配置" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Frank&#39;s Blog&title=关于Gradle仓库配置&summary=&pics=https://frankclr.github.io/null&url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://frankclr.github.io/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/&text=关于Gradle仓库配置" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Gradle/ >Gradle</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="一、-Wrapper-下载"><a href="#一、-Wrapper-下载" class="headerlink" title="一、 Wrapper 下载"></a>一、 Wrapper 下载</h2><p><a href="/2024/07/30/IntelliJ-IDEA%E4%BD%BF%E7%94%A8/#推荐">Maven 切换 wrapper</a></p>
+<h2 id="二、仓库配置"><a href="#二、仓库配置" class="headerlink" title="二、仓库配置"></a>二、仓库配置</h2><p>Gradle 7+ 统一使用项目根目录的 <code>settings.gradle</code> 设置<br>可以将下面的代码设置为 IDEA 的代码片段。<br>在新建实时模板时，要注意 模板的适用范围，选择 <code>Groovy-&gt;声明</code></p>
+<figure class="highlight groovy"><figcaption><span>settings.gradle</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">pluginManagement &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> enableOrigin = gradle.startParameter.systemPropertiesArgs[<span class="string">&#x27;repo.origin.enable&#x27;</span>]?.toBoolean()</span><br><span class="line">            ?: providers.gradleProperty(<span class="string">&quot;repo.origin.enable&quot;</span>)?.get()?.toBoolean()</span><br><span class="line">            ?: false</span><br><span class="line">    gradle.ext.enableOrigin = enableOrigin</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 本地资源库</span></span><br><span class="line">        <span class="comment">// mavenLocal()</span></span><br><span class="line"></span><br><span class="line">        if (enableOrigin) &#123;</span><br><span class="line">            gradlePluginPortal()</span><br><span class="line">            mavenCentral()</span><br><span class="line">            google()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            <span class="comment">// 国内</span></span><br><span class="line">            maven &#123; url = uri(<span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin&#x27;</span>) &#125;</span><br><span class="line">            maven &#123; url = uri(<span class="string">&#x27;https://mirrors.cloud.tencent.com/nexus/repository/gradle-plugins/&#x27;</span>) &#125;</span><br><span class="line"></span><br><span class="line">            gradle.ext.RepoUrls = [</span><br><span class="line">                    <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;https://mirrors.cloud.tencent.com/nexus/repository/maven-public&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;https://mirrors.huaweicloud.com/repository/maven&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;https://bmclapi2.bangbang93.com/maven/&#x27;</span>,</span><br><span class="line">            ]</span><br><span class="line">            gradle.ext.RepoUrls.each &#123; repoUrl -&gt;</span><br><span class="line">                maven &#123; url = uri(repoUrl) &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            gradlePluginPortal()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencyResolutionManagement &#123;</span><br><span class="line"></span><br><span class="line">    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 本地资源库</span></span><br><span class="line">        <span class="comment">// mavenLocal()</span></span><br><span class="line"></span><br><span class="line">        if (gradle.ext.enableOrigin) &#123;</span><br><span class="line">            mavenCentral()</span><br><span class="line">            google()</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            <span class="comment">// 国内</span></span><br><span class="line">            gradle.ext.RepoUrls.each &#123; repoUrl -&gt;</span><br><span class="line">                maven &#123; url = uri(repoUrl) &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、关于-plugin"><a href="#三、关于-plugin" class="headerlink" title="三、关于 plugin"></a>三、关于 plugin</h2><p>Gradle 里常说的 plugin，其实不是一类东西，而是 三类（这是大多数资料没讲清楚的根源）</p>
+<h3 id="1-Gradle-核心插件（Core-Plugin）"><a href="#1-Gradle-核心插件（Core-Plugin）" class="headerlink" title="1. Gradle 核心插件（Core Plugin）"></a>1. Gradle 核心插件（Core Plugin）</h3><p>Gradle 自带的，不需要下载。</p>
+<ul>
+<li>不走任何仓库</li>
+<li>不涉及网络</li>
+<li>永远可用</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">&#x27;java&#x27;</span></span><br><span class="line">    id <span class="string">&#x27;application&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-构建插件（Buildscript-Plugin-Classpath-Plugin）"><a href="#2-构建插件（Buildscript-Plugin-Classpath-Plugin）" class="headerlink" title="2. 构建插件（Buildscript Plugin &#x2F; Classpath Plugin）"></a>2. 构建插件（Buildscript Plugin &#x2F; Classpath Plugin）</h3><p>构建脚本本身需要用到的库,比如：Spring Boot 插件、Android 插件。<br>下载来源只看 <code>buildscript.repositories</code></p>
+<h3 id="3-Plugin-DSL-插件（plugins-那套）"><a href="#3-Plugin-DSL-插件（plugins-那套）" class="headerlink" title="3. Plugin DSL 插件（plugins {} 那套）"></a>3. Plugin DSL 插件（plugins {} 那套）</h3><p>Gradle 4+ 推的“新插件系统”<br>它不走：</p>
+<ul>
+<li><code>repositories &#123;&#125;</code></li>
+<li><code>buildscript.repositories &#123;&#125;</code></li>
+<li><code>init.gradle</code> 里的 <code>repositories</code></li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id <span class="string">&quot;org.springframework.boot&quot;</span> version <span class="string">&quot;2.1.8.RELEASE&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>它只走：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pluginManagement &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认地址是：<code>https://plugins.gradle.org/m2/</code>。这是很多人配了国内 Maven 镜像，插件还是疯狂连外网的根源</p>
+<p>Gradle 插件仓库（pluginManagement） 是 <code>plugins.gradle.org</code>,不会走你 <code>buildscript</code> &#x2F; <code>repositories</code> 里的配置。</p>
+<h2 id="四、Gradle-下载链路"><a href="#四、Gradle-下载链路" class="headerlink" title="四、Gradle 下载链路"></a>四、Gradle 下载链路</h2><p>Gradle 的“镜像配置”不是一份文件能解决的事，它被拆成了 4 个独立下载体系</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────┐</span><br><span class="line">│ Gradle <span class="keyword">wrapper</span> 下载自身 │  ← gradle-<span class="keyword">wrapper</span>.properties</span><br><span class="line">└───────────▲──────────────┘</span><br><span class="line">            │</span><br><span class="line">┌───────────┴──────────────┐</span><br><span class="line">│ Plugin DSL (plugins&#123;&#125;)   │  ← pluginManagement.repositories(插件系统,最早执行)，设置在settings.gradle</span><br><span class="line">│ plugins.gradle.org       │  ← 只看 pluginManagement &#123; repositories &#123;&#125; &#125;</span><br><span class="line">└───────────▲──────────────┘</span><br><span class="line">            │</span><br><span class="line">┌───────────┴──────────────┐</span><br><span class="line">│ buildscript classpath    │  ← buildscript.repositories(依赖解析系统,项目依赖) 设置在settings.gradle</span><br><span class="line">└───────────▲──────────────┘  ← 新版 Gradle 优先看 dependencyResolutionManagement &#123;repositories &#123;&#125;&#125;</span><br><span class="line">            │</span><br><span class="line">┌───────────┴──────────────┐</span><br><span class="line">│ 项目依赖 jar             │  ← repositories &#123;&#125;, 设置在 init.gradle/项目下的build.gradle</span><br><span class="line">└──────────────────────────┘ ← 老项目看 repositories &#123;&#125;,</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>对比点</th>
+<th>allprojects</th>
+<th>dependencyResolutionManagement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>位置</td>
+<td>init.gradle &#x2F; build.gradle</td>
+<td>settings.gradle</td>
+</tr>
+<tr>
+<td>时代</td>
+<td>旧（Gradle 4~6）</td>
+<td>新（Gradle 6.8+）</td>
+</tr>
+<tr>
+<td>能否被子项目改</td>
+<td>✅ 能</td>
+<td>❌ 能强制</td>
+</tr>
+<tr>
+<td>是否推荐</td>
+<td>❌ 不推荐</td>
+<td>✅ 官方推荐</td>
+</tr>
+<tr>
+<td>是否影响插件 DSL</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+</tbody></table>
+<h3 id="为什么-pluginManagement-不能放进-init-gradle"><a href="#为什么-pluginManagement-不能放进-init-gradle" class="headerlink" title="为什么 pluginManagement 不能放进 init.gradle"></a>为什么 <code>pluginManagement</code> 不能放进 <code>init.gradle</code></h3><p>Gradle 启动流程（简化）</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 读取 gradle-<span class="keyword">wrapper</span></span><br><span class="line"><span class="number">2.</span> 初始化 Gradle Runtime</span><br><span class="line"><span class="number">3.</span> 执行 init.gradle        ← 能控制</span><br><span class="line"><span class="number">4.</span> 解析 settings.gradle    ← pluginManagement 在这里</span><br><span class="line"><span class="number">5.</span> 解析 build.gradle</span><br></pre></td></tr></table></figure>
+
+<p>这是 Gradle 的启动顺序决定的, <code>pluginManagement</code> 发生在 <code>init.gradle</code> 之后.<br>所以, <code>init.gradle</code> 来不及影响, 并且 <code>pluginManagement</code> 必须在 <code>settings.gradle</code>。<strong>这是硬约束</strong><br>Gradle 把“插件解析”当成“项目入口”，所以它拒绝被 init.gradle 接管<br>官方 Gradle 7+ 强烈推荐这种方式：<code>settings.gradle</code> + 统一模板</p>
+<ul>
+<li>settings.gradle（核心）</li>
+<li>~&#x2F;.gradle&#x2F;gradle.properties（全局开关）</li>
+<li>init.gradle 只留给老项目</li>
+</ul>
+<p>pluginManagement 管“插件从哪下”<br>dependencyResolutionManagement 管“依赖从哪下”<br>init.gradle + allprojects 是“老办法的全局注入”</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>管什么</th>
+<th>作用对象</th>
+<th>能不能全局</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pluginManagement</code></td>
+<td><strong>DSL 插件仓库</strong></td>
+<td><code>plugins &#123;&#125;</code></td>
+<td>❌（settings.gradle）</td>
+</tr>
+<tr>
+<td><code>dependencyResolutionManagement</code></td>
+<td><strong>项目依赖仓库</strong></td>
+<td><code>dependencies &#123;&#125;</code></td>
+<td>❌（settings.gradle）</td>
+</tr>
+<tr>
+<td><code>init.gradle + allprojects</code></td>
+<td><strong>注入旧仓库配置</strong></td>
+<td>所有项目</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>这是 Gradle 新旧机制并存 + 向后兼容搞成这样。</p>
+<h2 id="五、settings-gradle"><a href="#五、settings-gradle" class="headerlink" title="五、settings.gradle"></a>五、settings.gradle</h2><p>Gradle 中的 settings.gradle (或 .kts) 文件是整个构建的入口点，主要负责定义项目结构和进行构建范围内的全局配置。它主要对应 Gradle API 中的 Settings 对象</p>
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>主要作用</th>
+<th>关键方法&#x2F;属性说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目结构</td>
+<td>声明构建中包含哪些项目（模块）</td>
+<td>include(“project-path”)：添加子项目。 <br> includeBuild(“path”)：包含组合构建。</td>
+</tr>
+<tr>
+<td>根项目</td>
+<td>配置根项目本身</td>
+<td>rootProject.name &#x3D; “name”：设置根项目名称。<br> rootProject.projectDir：可手动设置其目录。</td>
+</tr>
+<tr>
+<td>插件管理 (pluginManagement)</td>
+<td>集中配置构建所需插件的仓库和版本。</td>
+<td>repositories { }：声明插件仓库。<br> plugins { }：为插件指定版本（并不直接应用）。<br> resolutionStrategy { }：插件解析策略。</td>
+</tr>
+<tr>
+<td>依赖解析管理 (dependencyResolutionManagement)</td>
+<td>集中配置所有项目依赖项的仓库。</td>
+<td>repositories { }：声明依赖仓库。<br> repositoriesMode：控制项目级仓库声明的行为模式。<br> versionCatalogs { }：定义版本目录（推荐用于统一依赖版本）。<br></td>
+</tr>
+<tr>
+<td>设置插件 (plugins)</td>
+<td>应用那些仅用于配置 Settings 本身的插件。</td>
+<td>id(“plugin-id”) version “x.y.z”：与应用项目插件的语法类似。</td>
+</tr>
+</tbody></table>
+<p>repositoriesMode 的三种模式：</p>
+<ul>
+<li>PREFER_PROJECT (默认)：项目 (build.gradle) 中声明的仓库优先于此处声明的仓库。</li>
+<li>PREFER_SETTINGS：此处声明的仓库优先于项目中声明的仓库。</li>
+<li>FAIL_ON_PROJECT_REPOS：严格模式。如果在项目中声明了仓库，构建将直接失败。这可用于强制所有依赖都从统一、受控的仓库下载。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://docs.gradle.org.cn/current/userguide/writing_settings_files.html#writing_settings_files">编写设置文件</a><br><a target="_blank" rel="noopener" href="https://docs.gradle.org.cn/current/dsl/org.gradle.api.initialization.Settings.html#N18BC8">设置</a></p>
+<h2 id="六、关于-MavenLocal"><a href="#六、关于-MavenLocal" class="headerlink" title="六、关于 MavenLocal()"></a>六、关于 MavenLocal()</h2><ol>
+<li>这是一个指向你本地 <code>~/.m2/repository</code> 目录的仓库。它通常用于发布和测试你自己开发的库。如果你不需要频繁使用本地库，<strong>最好移除它</strong>，因为 Gradle 会检查其中的快照版本，可能会拖慢依赖解析速度(因为大概率所需依赖在 <code>mavenLocal()</code> 中没有，移除 <code>mavenLocal()</code> 就避免了 Gradle 在解析每个依赖时，都额外去扫描一个通常为空的 Maven 本地目录，减少了不必要的磁盘 I&#x2F;O，所以白检索了maven本地仓库)。</li>
+<li>最佳实践：在现代多项目构建中，强烈建议将 <code>dependencyResolutionManagement</code> 块置于 <code>settings.gradle</code> 中进行集中、统一的仓库管理，并考虑使用 <code>FAIL_ON_PROJECT_REPOS</code> 模式来强制所有项目使用统一的、受信的仓库源，这对安全性和可复现性至关重要。</li>
+</ol>
+<p>Gradle 本地缓存 vs Maven 本地仓库 (mavenLocal())</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Gradle 本地缓存</th>
+<th>Maven 本地仓库 (mavenLocal())</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>默认行为</td>
+<td>默认存在，无需配置。Gradle 下载任何依赖后都会自动存入。</td>
+<td>需要显式配置 mavenLocal() 仓库才会被读取。</td>
+</tr>
+<tr>
+<td>位置</td>
+<td><code>~/.gradle/caches/modules-2/files-2.1/</code> (路径结构独特)</td>
+<td><code>~/.m2/repository/</code> (标准的Maven目录结构)</td>
+</tr>
+<tr>
+<td>作用</td>
+<td>Gradle 专属的依赖存储，是其依赖解析机制的核心部分。</td>
+<td>Maven工具 的本地仓库，由 maven install 等命令填充。</td>
+</tr>
+<tr>
+<td>去重与性能</td>
+<td>专为 Gradle 的并行解析和缓存复用优化。</td>
+<td>按顺序扫描，会增加不必要的磁盘 I&#x2F;O 检查。</td>
+</tr>
+</tbody></table>
+<h3 id="1-何时需要保留-mavenLocal-："><a href="#1-何时需要保留-mavenLocal-：" class="headerlink" title="1. 何时需要保留 mavenLocal()："></a>1. 何时需要保留 mavenLocal()：</h3><ul>
+<li>混合构建环境：你同时使用 Maven（执行 mvn install）和 Gradle 来构建相互依赖的不同模块。</li>
+<li>测试本地发布的库：你使用 maven-publish 插件将库发布到本地（publishToMavenLocal），并想在另一个 Gradle 项目中立即使用它。</li>
+<li>在这种情况下，应在项目的 settings.gradle 中按需、显式地添加</li>
+</ul>
+<h3 id="2-核心机制与关键细节"><a href="#2-核心机制与关键细节" class="headerlink" title="2. 核心机制与关键细节"></a>2. 核心机制与关键细节</h3><ul>
+<li>mavenLocal() 只是仓库列表的一员：Gradle 将它与你配置的其他仓库（阿里云、Central 等）同等对待。解析器会严格按照你在 repositories {} 块中声明的顺序，逐个查询这些仓库，直到找到所需依赖。</li>
+<li>顺序至关重要：如果你将 mavenLocal() 放在阿里云镜像之后声明，那么远程镜像的查找顺序会优先于本地 Maven 仓库。</li>
+<li>为何能“优先”：通常情况下，开发者会将 mavenLocal() 放在仓库列表的最前面，目的就是为了让 Gradle 优先使用 mvn install 安装到本地的构件进行测试，因此形成了你描述的“缓存 -&gt; 本地Maven -&gt; 远程”的典型路径。</li>
+</ul>
+<h3 id="3-重要提醒：关于-mavenLocal-的潜在风险"><a href="#3-重要提醒：关于-mavenLocal-的潜在风险" class="headerlink" title="3. 重要提醒：关于 mavenLocal() 的潜在风险"></a>3. 重要提醒：关于 mavenLocal() 的潜在风险</h3><p>虽然优先使用 mavenLocal() 很方便，但它也可能引入不稳定因素：</p>
+<ul>
+<li>版本污染：本地可能存放着旧版本或非官方构建的依赖，导致构建结果与团队其他成员或CI服务器不一致。</li>
+<li>“幽灵”依赖：本地存在但远程仓库已删除的依赖，会让你的项目在另一台干净的机器上构建失败。</li>
+</ul>
+<p>因此，在团队协作或生产环境中，通常建议不在主配置中启用 mavenLocal()。仅在需要测试本地发布的库时，通过命令行临时添加</p>
+<h2 id="七、最佳实践"><a href="#七、最佳实践" class="headerlink" title="七、最佳实践"></a>七、最佳实践</h2><ol>
+<li>统一工程模板<ul>
+<li><code>settings.gradle</code> 固定</li>
+<li>禁止项目私改</li>
+</ul>
+</li>
+<li>仓库级拦截<ul>
+<li>Nexus &#x2F; Artifactory</li>
+<li>外网仓库直接封</li>
+</ul>
+</li>
+<li>Gradle wrapper 固定</li>
+<li>plugin 只从内网仓库出</li>
+</ol>
+<h2 id="八、PowerShell-中执行-gradle-mvn-相关命令"><a href="#八、PowerShell-中执行-gradle-mvn-相关命令" class="headerlink" title="八、PowerShell 中执行 gradle&#x2F;mvn 相关命令"></a>八、PowerShell 中执行 gradle&#x2F;mvn 相关命令</h2><p><code>.\gradlew &quot;-Prepo.origin.enabled=true&quot; tasks</code>	关键：整个 <code>-P...=...</code> 必须用双引号包裹，并且在前面加上 <code>.\</code> 来调用当前目录的 wrapper。<br><code>.\gradlew &quot;-Drepo.origin.enabled=true&quot; tasks</code>	同样，整个 <code>-D...=...</code> 用双引号包裹。</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2025/09/17/NET%E5%8F%91%E5%B8%83%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">
+        <span>.NET发布相关命令</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81-Wrapper-%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">一、 Wrapper 下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">二、仓库配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%85%B3%E4%BA%8E-plugin"><span class="toc-number">3.</span> <span class="toc-text">三、关于 plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Gradle-%E6%A0%B8%E5%BF%83%E6%8F%92%E4%BB%B6%EF%BC%88Core-Plugin%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">1. Gradle 核心插件（Core Plugin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9E%84%E5%BB%BA%E6%8F%92%E4%BB%B6%EF%BC%88Buildscript-Plugin-Classpath-Plugin%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">2. 构建插件（Buildscript Plugin &#x2F; Classpath Plugin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Plugin-DSL-%E6%8F%92%E4%BB%B6%EF%BC%88plugins-%E9%82%A3%E5%A5%97%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3. Plugin DSL 插件（plugins {} 那套）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Gradle-%E4%B8%8B%E8%BD%BD%E9%93%BE%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">四、Gradle 下载链路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-pluginManagement-%E4%B8%8D%E8%83%BD%E6%94%BE%E8%BF%9B-init-gradle"><span class="toc-number">4.1.</span> <span class="toc-text">为什么 pluginManagement 不能放进 init.gradle</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81settings-gradle"><span class="toc-number">5.</span> <span class="toc-text">五、settings.gradle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%85%B3%E4%BA%8E-MavenLocal"><span class="toc-number">6.</span> <span class="toc-text">六、关于 MavenLocal()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%95%E6%97%B6%E9%9C%80%E8%A6%81%E4%BF%9D%E7%95%99-mavenLocal-%EF%BC%9A"><span class="toc-number">6.1.</span> <span class="toc-text">1. 何时需要保留 mavenLocal()：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6%E4%B8%8E%E5%85%B3%E9%94%AE%E7%BB%86%E8%8A%82"><span class="toc-number">6.2.</span> <span class="toc-text">2. 核心机制与关键细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%87%8D%E8%A6%81%E6%8F%90%E9%86%92%EF%BC%9A%E5%85%B3%E4%BA%8E-mavenLocal-%E7%9A%84%E6%BD%9C%E5%9C%A8%E9%A3%8E%E9%99%A9"><span class="toc-number">6.3.</span> <span class="toc-text">3. 重要提醒：关于 mavenLocal() 的潜在风险</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">7.</span> <span class="toc-text">七、最佳实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81PowerShell-%E4%B8%AD%E6%89%A7%E8%A1%8C-gradle-mvn-%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text">八、PowerShell 中执行 gradle&#x2F;mvn 相关命令</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <span>
+        &copy; 2024 - 2026 
+        
+        Frank
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
