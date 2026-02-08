@@ -142,8 +142,8 @@
 
   <aside id="sidebar" class="mdui-drawer">
     <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
     </div>
 
     
@@ -155,7 +155,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-home"></i>
                     </div>
-                    <div class="mdui-list-item-content">Home</div>
+                    <div class="mdui-list-item-content">主页</div>
                 </a>
             
                 
@@ -163,7 +163,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-bookmark"></i>
                     </div>
-                    <div class="mdui-list-item-content">Tags</div>
+                    <div class="mdui-list-item-content">标签</div>
                 </a>
             
                 
@@ -171,7 +171,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-folder"></i>
                     </div>
-                    <div class="mdui-list-item-content">Categories</div>
+                    <div class="mdui-list-item-content">分类</div>
                 </a>
             
                 
@@ -179,7 +179,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-archive"></i>
                     </div>
-                    <div class="mdui-list-item-content">Archives</div>
+                    <div class="mdui-list-item-content">归档</div>
                 </a>
             
                 
@@ -195,14 +195,14 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-user"></i>
                     </div>
-                    <div class="mdui-list-item-content">About</div>
+                    <div class="mdui-list-item-content">关于</div>
                 </a>
             
             <div class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-icon">
                     <i class="iconfont icon-moon"></i>
                 </div>
-                <div class="mdui-list-item-content">Night Mode</div>
+                <div class="mdui-list-item-content">夜间模式</div>
                 <label class="mdui-switch" id="darkmode">
                   <input type="checkbox" id="nightmode_switch"/>
                   <i class="mdui-switch-icon"></i>
@@ -255,7 +255,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-link"></i>
                     </div>
-                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-list-item-content">友情链接</div>
                     <div class="mdui-collapse-item-arrow">
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
@@ -282,19 +282,68 @@
       
       
         <div class="post-header"> 
+  <a class="post-header-title" href="/2024/07/31/Linux%E6%89%B9%E9%87%8F%E7%BB%88%E6%AD%A2%E8%BF%9B%E7%A8%8B/">Linux批量终止进程</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2024-07-31
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2024-08-04
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Linux/ >Linux</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> $(ps aux|grep <span class="string">&#x27;[d]otnet Eson.MMS.API.dll&#x27;</span> |awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>)</span><br><span class="line">ps -aux|grep java|grep -v grep | awk <span class="string">&#x27;&#123; print $2&#125;&#x27;</span> |xargs -t <span class="built_in">kill</span></span><br></pre></td></tr></table></figure>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Linux%E6%89%B9%E9%87%8F%E7%BB%88%E6%AD%A2%E8%BF%9B%E7%A8%8B/">阅读更多</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
   <a class="post-header-title" href="/2024/07/31/Node-js%E7%BC%96%E8%AF%91%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8vs2022/">Node.js编译无法使用vs2022</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
     </span>
     
   </div>
@@ -322,7 +371,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Node-js%E7%BC%96%E8%AF%91%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8vs2022/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Node-js%E7%BC%96%E8%AF%91%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8vs2022/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -335,15 +384,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-09
+      更新于:&nbsp;2025-08-09
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
     </span>
     
   </div>
@@ -374,7 +423,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Node-js%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Node-js%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -387,15 +436,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -433,7 +482,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/NuGet%E7%9B%B8%E5%85%B3/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/NuGet%E7%9B%B8%E5%85%B3/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -446,15 +495,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -483,7 +532,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Python%E4%B9%8Bjson%E5%BA%8F%E5%88%97%E5%8C%96/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Python%E4%B9%8Bjson%E5%BA%8F%E5%88%97%E5%8C%96/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -496,15 +545,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
     </span>
     
   </div>
@@ -532,7 +581,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/rm%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E8%BF%87%E9%95%BF/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/rm%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E8%BF%87%E9%95%BF/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -545,15 +594,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
     </span>
     
   </div>
@@ -582,7 +631,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Linux%E5%88%A0%E9%99%A4%E4%B8%AA%E5%88%AB%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/Linux%E5%88%A0%E9%99%A4%E4%B8%AA%E5%88%AB%E5%A4%96%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -595,15 +644,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -632,7 +681,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SpringBootTest%E6%BF%80%E6%B4%BB%E9%85%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SpringBootTest%E6%BF%80%E6%B4%BB%E9%85%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -645,15 +694,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -681,7 +730,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SQLProfiler%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SQLProfiler%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -694,15 +743,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
+      发布于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
+      更新于:&nbsp;2024-07-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -734,79 +783,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SqlServer%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95/">Read More</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2024/07/31/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84/">SQLServer数据类型映射</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2024-07-31
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2024-07-31
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/C/ >C#</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <table>
-<thead>
-<tr>
-<th></th>
-<th>SQL Server 类型</th>
-<th>.NET 类型</th>
-<th>C# Primitive</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>准确数字类型</td>
-<td>bit</td>
-<td>System.Boolean</td>
-<td>bool</td>
-</tr>
-<tr>
-<td></td>
-<td>tinyint</td>
-<td>System.Byte</td>
-<td>byte</td>
-</tr>
-<tr>
-<td></td>
-<td>smallint</td...
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2024/07/31/SqlServer%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -836,10 +813,10 @@
     <div class="mdui-row">
       
         <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
         </div>
       
     </div>

@@ -142,8 +142,8 @@
 
   <aside id="sidebar" class="mdui-drawer">
     <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
     </div>
 
     
@@ -155,7 +155,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-home"></i>
                     </div>
-                    <div class="mdui-list-item-content">Home</div>
+                    <div class="mdui-list-item-content">主页</div>
                 </a>
             
                 
@@ -163,7 +163,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-bookmark"></i>
                     </div>
-                    <div class="mdui-list-item-content">Tags</div>
+                    <div class="mdui-list-item-content">标签</div>
                 </a>
             
                 
@@ -171,7 +171,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-folder"></i>
                     </div>
-                    <div class="mdui-list-item-content">Categories</div>
+                    <div class="mdui-list-item-content">分类</div>
                 </a>
             
                 
@@ -179,7 +179,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-archive"></i>
                     </div>
-                    <div class="mdui-list-item-content">Archives</div>
+                    <div class="mdui-list-item-content">归档</div>
                 </a>
             
                 
@@ -195,14 +195,14 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-user"></i>
                     </div>
-                    <div class="mdui-list-item-content">About</div>
+                    <div class="mdui-list-item-content">关于</div>
                 </a>
             
             <div class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-icon">
                     <i class="iconfont icon-moon"></i>
                 </div>
-                <div class="mdui-list-item-content">Night Mode</div>
+                <div class="mdui-list-item-content">夜间模式</div>
                 <label class="mdui-switch" id="darkmode">
                   <input type="checkbox" id="nightmode_switch"/>
                   <i class="mdui-switch-icon"></i>
@@ -255,7 +255,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-link"></i>
                     </div>
-                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-list-item-content">友情链接</div>
                     <div class="mdui-collapse-item-arrow">
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
@@ -282,19 +282,72 @@
       
       
         <div class="post-header"> 
+  <a class="post-header-title" href="/2026/02/08/PowerShell-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">PowerShell 环境变量</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2026-02-08
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2026-02-08
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/Windows/ >Windows</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/PowerShell/ >PowerShell</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <figure class="highlight pwsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示环境变量</span></span><br><span class="line"><span class="variable">$Env:</span>&lt;variable<span class="literal">-name</span>&gt;</span><br><span class="line"><span class="variable">$env:path</span> <span class="operator">-split</span> <span class="string">&#x27;;&#x27;</span></span><br><span class="line"><span class="comment"># 显示和更改环境变量的值</span></span><br><span class="line"><span class="variable">$Env:</span>&lt;variable<span class="literal">-name</span>&gt; = <span class="string">&quot;&lt;new-value&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用环境提供程序和项 cmdlet</span></span><br><span class="line"><span class="built_in">New-Item</span> <span class="literal">-Path</span> Env:\Foo <span class="literal">-Value</span> <span class="string">&#x27;Bar&#x27;</span></span><br><span class="line"><span class="built_in">Copy-Item</span> <span class="literal">-Path</span> Env:\Foo <span class="literal">-Destination</span> Env:\Foo2 <span class="literal">-PassThru</span></span><br><span class="line"><span class="built_in">Set-Item</span> <span class="literal">-Path</span> Env:\Foo2 <span class="literal">-Value</span> <span class="string">&#x27;BAR&#x27;</span></span><br><span class="line"><span class="built_in">Get-Item</span> <span class="literal">-Path</span> Env:\Foo*</span><br><span class="line"><span class="built_in">Remove-Item</span> <span class="literal">-Path</span> Env:\Foo* <span class="literal">-Verbose</span></span><br><span class="line"><span class="built_in">Get-ChildItem</span> Env:</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 .NET(System.Environment) 方法（推荐）</span></span><br><span class="line"><span class="comment"># 设置为用户环境变量（仅影响你账户下的程序）</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;Foo&#x27;</span>, <span class="string">&#x27;Bar&#x27;</span>, <span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置为系统环境变量（影响所有用户，需要以**管理员身份**运行PowerShell）</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;Foo&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;Machine&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 setx 命令</span></span><br><span class="line"><span class="comment"># 设置为用户环境变量</span></span><br><span class="line">setx MY_VAR <span class="string">&quot;C:\MyPath&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置为系统环境变量（需要以**管理员身份**运行）</span></span><br><span class="line">setx MY_VAR <span class="string">&quot;C:\MyPath&quot;</span> /M</span><br></pre></td></tr></table></figure>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2026/02/08/PowerShell-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">阅读更多</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
   <a class="post-header-title" href="/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/">关于Gradle仓库配置</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2026-01-31
+      发布于:&nbsp;2026-01-31
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2026-01-31
+      更新于:&nbsp;2026-01-31
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/Gradle/">Gradle</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a> > <a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/Gradle/">Gradle</a>
     </span>
     
   </div>
@@ -323,7 +376,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2026/01/31/%E5%85%B3%E4%BA%8EGradle%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -336,15 +389,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-09-17
+      发布于:&nbsp;2025-09-17
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-09-18
+      更新于:&nbsp;2025-09-18
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -374,7 +427,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/09/17/NET%E5%8F%91%E5%B8%83%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/09/17/NET%E5%8F%91%E5%B8%83%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -387,15 +440,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-08-28
+      发布于:&nbsp;2025-08-28
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-28
+      更新于:&nbsp;2025-08-28
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -433,7 +486,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/28/IDEA%E9%A1%B9%E7%9B%AE%E6%8A%A5%E7%BA%A2/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/28/IDEA%E9%A1%B9%E7%9B%AE%E6%8A%A5%E7%BA%A2/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -446,15 +499,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-08-19
+      发布于:&nbsp;2025-08-19
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-19
+      更新于:&nbsp;2025-08-19
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -494,7 +547,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/19/Haproxy%E4%BB%8B%E7%BB%8D/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/19/Haproxy%E4%BB%8B%E7%BB%8D/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -507,15 +560,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-08-18
+      发布于:&nbsp;2025-08-18
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-21
+      更新于:&nbsp;2025-08-21
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -548,7 +601,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/18/ZooKeeper%E4%BD%BF%E7%94%A8/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/18/ZooKeeper%E4%BD%BF%E7%94%A8/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -561,15 +614,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-08-18
+      发布于:&nbsp;2025-08-18
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-18
+      更新于:&nbsp;2025-08-18
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -598,7 +651,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/18/Debian-%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/18/Debian-%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -611,15 +664,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-08-15
+      发布于:&nbsp;2025-08-15
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-16
+      更新于:&nbsp;2025-08-16
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -647,7 +700,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/15/Git%E5%90%88%E5%B9%B6%E6%9C%80%E8%BF%91%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/08/15/Git%E5%90%88%E5%B9%B6%E6%9C%80%E8%BF%91%E5%A4%9A%E4%B8%AA%E6%8F%90%E4%BA%A4/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -660,15 +713,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-07-30
+      发布于:&nbsp;2025-07-30
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-07-30
+      更新于:&nbsp;2025-07-30
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -708,7 +761,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/07/30/Debian%E5%90%AF%E7%94%A8%E5%86%85%E5%AD%98%E5%8E%8B%E7%BC%A9/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/07/30/Debian%E5%90%AF%E7%94%A8%E5%86%85%E5%AD%98%E5%8E%8B%E7%BC%A9/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -721,15 +774,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-07-24
+      发布于:&nbsp;2025-07-24
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-08-10
+      更新于:&nbsp;2025-08-10
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
     </span>
     
   </div>
@@ -760,58 +813,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/07/24/%E5%9C%A8Hyper-V%E5%AE%89%E8%A3%85%E7%9A%84Debian10%E7%A6%81%E7%94%A8swap/">Read More</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2025/07/23/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8CPU%E7%9A%84Java%E7%BA%BF%E7%A8%8B/">使用命令查看占用CPU的Java线程</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2025-07-23
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2025-07-23
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/Java/ >Java</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <ol>
-<li><p>找到 <code>%CPU</code> 最高的进程 PID</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/07/23/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8CPU%E7%9A%84Java%E7%BA%BF%E7%A8%8B/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2025/07/24/%E5%9C%A8Hyper-V%E5%AE%89%E8%A3%85%E7%9A%84Debian10%E7%A6%81%E7%94%A8swap/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -841,10 +843,10 @@
     <div class="mdui-row">
       
         <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
         </div>
       
     </div>
